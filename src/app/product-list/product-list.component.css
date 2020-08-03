@@ -1,0 +1,59 @@
+#main{
+    float:left;
+    width:70%;
+}
+
+.productsContainer{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.productTile{
+    width: 33%;
+    margin: 1px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 400px)  {
+    .productTile{
+        width: 49%;
+        margin: 1px;
+        text-align: center;
+    }
+}
+
+.ProductImg{
+    width: 70%;
+    margin: 20px 0 0 40px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+}
+
+.ProductInfo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: 20px 0 0 40px;
+}
+
+.ProductInfoSub{
+    width: 45%;
+}
+.pTitle{
+    text-align: left;
+    margin-left: 4%;
+}
+.pColour{
+    text-align: right;
+}
+.pBrand{
+    text-align: left;
+    margin-left: 4%;
+}
+.padd{
+    text-align: right;
+}
+.pPrice{
+    text-align: left;
+    margin-left: 4%;
+}

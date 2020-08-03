@@ -1,0 +1,76 @@
+#sidebar-left{
+    float:left;
+    width:29%;
+    border-right: 1px solid #ddd;
+}
+
+#sidebar-left, #main, #sidebar-right{
+    min-height: 600px				
+}
+
+.reset-filters{
+    border-bottom: 1px solid #ddd;
+    height: 30px;
+    margin-bottom: 50px;
+}
+
+.clour-filters{
+    border: 1px solid #ddd;
+    height: 120px;
+    margin: 5px;
+    overflow: scroll;
+}
+.clour-filters input[type=checkbox]{
+    margin: 5px 4px 10px 18px;
+}
+.clour-filters p{
+    margin: 5px 0 5px 18px;
+}
+.brand-filters{
+    border: 1px solid #ddd;
+    height: 120px;
+    margin: 5px;
+    overflow: scroll;
+}
+.brand-filters input[type=checkbox]{
+    margin: 5px 4px 10px 18px;
+}
+.brand-filters p{
+    margin: 5px 0 5px 18px;
+}
+.priceDiv{
+    display: flex;
+    margin: 5px 4px 10px 18px;
+}
+.minPrice{
+    margin: 0 30px 0 0;
+}
+.maxPrice{
+    margin: 0 0 0 30px;
+}
+.price-filters{
+    border: 1px solid #ddd;
+    height: 120px;
+    margin: 5px;
+}
+.price-filters p{
+    margin: 5px 0 25px 18px;
+}
+.discDiv{
+    display: flex;
+    margin: 5px 4px 10px 18px;
+}
+.minDisc{
+    margin: 0 30px 0 0;
+}
+.maxDisc{
+    margin: 0 0 0 30px;
+}
+.disc-filters{
+    border: 1px solid #ddd;
+    height: 120px;
+    margin: 5px;
+}
+.disc-filters p{
+    margin: 5px 0 25px 18px;
+}
