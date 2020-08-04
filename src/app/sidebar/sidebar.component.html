@@ -2,63 +2,17 @@
     <div class="reset-filters">Filters <i class="fa fa-filter" style="font-size:16px;float: right;"> Reset Filter</i></div>
     <div class="clour-filters">
         <p>Colours</p>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
-        <input type="checkbox" id="colour" name="colour" value="colour">
-        <label for="colour">C1</label>
+        <div *ngFor="let colour of colours">
+            <input type="checkbox" id="colour" name="colour" value="{{colour.color}}">
+            <label for="colour">{{colour.title}}</label>
+        </div>
     </div>
     <div class="brand-filters">
         <p>Brands</p>
-        <input type="checkbox" id="brand" name="brand" value="brand">
-        <label for="brand">B1</label>
-        <input type="checkbox" id="brand" name="brand" value="brand">
-        <label for="brand">B1</label>
-        <input type="checkbox" id="brand" name="brand" value="brand">
-        <label for="brand">B1</label>
-        <input type="checkbox" id="brand" name="brand" value="brand">
-        <label for="brand">B1</label>
-        <input type="checkbox" id="brand" name="brand" value="brand">
-        <label for="brand">B1</label>
-        <input type="checkbox" id="brand" name="brand" value="brand">
-        <label for="brand">B1</label>
-        <input type="checkbox" id="brand" name="brand" value="brand">
-        <label for="brand">B1</label>
-        <input type="checkbox" id="brand" name="brand" value="brand">
-        <label for="brand">B1</label>
-        <input type="checkbox" id="brand" name="brand" value="brand">
-        <label for="brand">B1</label>
+        <div *ngFor="let brand of brands">
+            <input type="checkbox" id="brand" name="brand" value="{{brand.value}}">
+            <label for="colour">{{brand.title}}</label>
+        </div>
         
     </div>
     <div class="price-filters">
@@ -66,12 +20,12 @@
         <div class="priceDiv">
             <div class="minPrice">
                 <select name="princeMin" id="princeMin">
-                    <option value="">Min</option>
+                    <option value="{{price.key}}" *ngFor="let price of prices">{{price.displayValue}}</option>
                 </select>
             </div>
             <div class="maxPrice">
                 <select name="princeMax" id="princeMax">
-                    <option value="">Max</option>
+                    <option value="{{price.key}}" *ngFor="let price of prices">{{price.displayValue}}</option>
                 </select>
             </div>
         </div>
@@ -81,12 +35,12 @@
         <div class="discDiv">
             <div class="minDisc">
                 <select name="discMin" id="discMin">
-                    <option value="">Min</option>
+                    <option value="{{disc.key}}" *ngFor="let disc of discounts">{{disc.displayValue}}</option>
                 </select>
             </div>
             <div class="maxDisc">
                 <select name="discMax" id="discMax">
-                    <option value="">Max</option>
+                    <option value="{{disc.key}}" *ngFor="let disc of discounts">{{disc.displayValue}}</option>
                 </select>
             </div>
         </div>

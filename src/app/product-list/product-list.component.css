@@ -27,6 +27,7 @@
     margin: 20px 0 0 40px;
     border: 1px solid #ddd;
     border-radius: 7px;
+    position:relative;
 }
 
 .ProductInfo{
@@ -57,3 +58,15 @@
     text-align: left;
     margin-left: 4%;
 }
+
+.top-right {
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    position:relative; 
+    display: inline-block;
+    top:-130px; 
+    left:5px;
+  }
