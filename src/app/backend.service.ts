@@ -24,6 +24,11 @@ export class BackendService {
     return throwError(errorMessage);
   }
 
+  login(username : string, password : string) {
+    return this.http.get(this.baseUrl+"/users?username="+username)
+    .pipe(catchError(this.handleError));
+  }
+
   getProductList() {
     return this.http.get(this.baseUrl+"/products")
     .pipe(catchError(this.handleError));
@@ -34,8 +39,8 @@ export class BackendService {
     .pipe(catchError(this.handleError));
   }
 
-  getProductByName(productTitle : string) {
-    return this.http.get(this.baseUrl+"/products?title"+productTitle)
+  getProductByTitle(productTitle : string) {
+    return this.http.get(this.baseUrl+"/products?title="+productTitle)
     .pipe(catchError(this.handleError));
   }
 }

@@ -1,31 +1,30 @@
 <div id="sidebar-left">
-    <div class="reset-filters">Filters <i class="fa fa-filter" style="font-size:16px;float: right;"> Reset Filter</i></div>
+    <div class="reset-filters">Filters <i class="fa fa-filter" (click)="resetAllFilters()"> Reset Filter</i></div>
     <div class="clour-filters">
         <p>Colours</p>
-        <div *ngFor="let colour of colours">
-            <input type="checkbox" id="colour" name="colour" value="{{colour.color}}">
-            <label for="colour">{{colour.title}}</label>
-        </div>
+        <span class="color-row" *ngFor="let colour of colours">
+            <input type="checkbox" [(ngModel)]="colour.isSelected" name="colour" value="{{colour.title}}" (change)="onFilterChange($event, 'colour')">
+            <label for="colour">{{colour.title.substring(0,7)}}</label>
+        </span>
     </div>
     <div class="brand-filters">
         <p>Brands</p>
-        <div *ngFor="let brand of brands">
-            <input type="checkbox" id="brand" name="brand" value="{{brand.value}}">
-            <label for="colour">{{brand.title}}</label>
-        </div>
-        
+        <span class="brand-row" *ngFor="let brand of brands">
+            <input type="checkbox" [(ngModel)]="brand.isSelected" name="brand" value="{{brand.title}}" (change)="onFilterChange($event, 'brand')">
+            <label for="colour">{{brand.title.substring(0,7)}}</label>
+        </span>
     </div>
     <div class="price-filters">
         <p>Price</p>
         <div class="priceDiv">
             <div class="minPrice">
-                <select name="princeMin" id="princeMin">
-                    <option value="{{price.key}}" *ngFor="let price of prices">{{price.displayValue}}</option>
+                <select name="princeMin" id="princeMin" [(ngModel)]="selectedMinPrice" (change)="onFilterChange($event, 'princeMin')">
+                    <option value="{{price.key}}" *ngFor="let price of pricesMin">{{price.displayValue}}</option>
                 </select>
             </div>
             <div class="maxPrice">
-                <select name="princeMax" id="princeMax">
-                    <option value="{{price.key}}" *ngFor="let price of prices">{{price.displayValue}}</option>
+                <select name="princeMax" id="princeMax" [(ngModel)]="selectedMaxPrice" (change)="onFilterChange($event, 'princeMax')">
+                    <option value="{{price.key}}" *ngFor="let price of pricesMax">{{price.displayValue}}</option>
                 </select>
             </div>
         </div>
@@ -34,13 +33,13 @@
         <p>Discount</p>
         <div class="discDiv">
             <div class="minDisc">
-                <select name="discMin" id="discMin">
-                    <option value="{{disc.key}}" *ngFor="let disc of discounts">{{disc.displayValue}}</option>
+                <select name="discMin" id="discMin" [(ngModel)]="selectedMinDiscount" (change)="onFilterChange($event, 'discMin')">
+                    <option value="{{disc.key}}" *ngFor="let disc of discountMin">{{disc.displayValue}}</option>
                 </select>
             </div>
             <div class="maxDisc">
-                <select name="discMax" id="discMax">
-                    <option value="{{disc.key}}" *ngFor="let disc of discounts">{{disc.displayValue}}</option>
+                <select name="discMax" id="discMax" [(ngModel)]="selectedMaxDiscount" (change)="onFilterChange($event, 'discMax')">
+                    <option value="{{disc.key}}" *ngFor="let disc of discountMax">{{disc.displayValue}}</option>
                 </select>
             </div>
         </div>

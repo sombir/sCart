@@ -12,6 +12,13 @@
     border-bottom: 1px solid #ddd;
     height: 30px;
     margin-bottom: 50px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.reset-filters i{
+    font-size: 16px;
+    float: right;
 }
 
 .clour-filters{
@@ -19,6 +26,10 @@
     height: 120px;
     margin: 5px;
     overflow: scroll;
+}
+.color-row{
+    width: 30%;
+    display: inline-block;
 }
 .clour-filters input[type=checkbox]{
     margin: 5px 4px 10px 18px;
@@ -31,6 +42,10 @@
     height: 120px;
     margin: 5px;
     overflow: scroll;
+}
+.brand-row{
+    width: 30%;
+    display: inline-block;
 }
 .brand-filters input[type=checkbox]{
     margin: 5px 4px 10px 18px;
@@ -73,4 +88,15 @@
 }
 .disc-filters p{
     margin: 5px 0 25px 18px;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 400px)  {
+    .color-row{
+        width: 50%;
+        display: inline-block;
+    }
+    .brand-row{
+        width: 50%;
+        display: inline-block;
+    }
 }

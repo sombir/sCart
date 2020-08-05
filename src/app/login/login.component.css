@@ -25,8 +25,8 @@ input[type=text], input[type=password] {
 }
 
 button {
-  background-color: #bbc0bb;
-  color: #fff;
+  background-color: #f3f3f3;
+  color: #000;
   padding: 14px 20px;
   margin: 8px 0;
   cursor: pointer;
@@ -91,4 +91,9 @@ input[type=password]::-ms-input-placeholder {
   .cancelbtn {
      width: 100%;
   }
+}
+
+.error-text{
+  color: red;
+  margin: 1% 0 0 14%;
 }

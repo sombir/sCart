@@ -1,21 +1,22 @@
-<app-header></app-header>
-<app-sidebar></app-sidebar>
+<app-header [totalItems]="cartItems" (messageEvent)="searchProducts($event)"></app-header>
+<app-sidebar (messageEvent)="filterProducts($event)"></app-sidebar>
 <div id="main">
     <div class="productsContainer">
         <div class="productTile" *ngFor="let product of products">
             <div class="ProductImg">
                 <img src="{{product.image}}" alt="" width="150" height="150">
-                <span class="top-right"><i>15%</i></span>
+                <span *ngIf='product.discount > 0' class="top-right"><i>{{product.discount}}%</i></span>
             </div>
             <div class="ProductInfo">
                 <div class="pTitle ProductInfoSub">{{product.title}}</div>
                 <div class="pColour ProductInfoSub">Colour <i class="fa fa-square" aria-hidden="true" style="color:{{product.colour.color}}"></i>
                 </div>
                 <div class="pBrand ProductInfoSub">{{product.brand}}</div>
-                <div class="padd ProductInfoSub"><i class="fa fa-plus-circle" style="font-size:24px"></i> Add</div>
+                <div class="padd ProductInfoSub"><i class="fa fa-plus-circle" (click)="addToCart(product.id)"></i> Add</div>
                 <div class="pPrice ProductInfoSub">{{product.price.final_price}}$</div>
             </div>
         </div>
+        <div class="noResults" *ngIf='products.length === 0'>No Results</div>
     </div>
 </div>
 <app-footer></app-footer>

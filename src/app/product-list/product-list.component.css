@@ -40,6 +40,10 @@
 .ProductInfoSub{
     width: 45%;
 }
+
+.ProductInfoSub i{
+    font-size: 16px;
+}
 .pTitle{
     text-align: left;
     margin-left: 4%;
@@ -69,4 +73,8 @@
     display: inline-block;
     top:-130px; 
     left:5px;
+  }
+
+  .noResults{
+      margin: 20px 0 0 20px;
   }
