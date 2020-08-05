@@ -79,16 +79,16 @@ export class SidebarComponent implements OnInit {
   onFilterChange(event:any, filterType:string) {
     if(filterType == 'colour'){
       if ( event.target.checked ) {
-        this.filters.colours.push(event.target.value);
+        this.filters.colours.push(event.target.value.toLocaleLowerCase());
       }else{
-        this.filters.colours = this.filters.colours.filter(item => item !== event.target.value)
+        this.filters.colours = this.filters.colours.filter(item => item !== event.target.value.toLocaleLowerCase())
       }
     }
     if(filterType == 'brand'){
       if ( event.target.checked ) {
-        this.filters.brands.push(event.target.value);
+        this.filters.brands.push(event.target.value.toLocaleLowerCase());
       }else{
-        this.filters.brands = this.filters.brands.filter(item => item !== event.target.value)
+        this.filters.brands = this.filters.brands.filter(item => item !== event.target.value.toLocaleLowerCase())
       }
     }
 

@@ -22,12 +22,10 @@ export class LoginComponent implements OnInit {
       private router: Router,
       private backendService: BackendService
   ) {
-      
-    
-    // redirect to home if already logged in
-      // if (this.authenticationService.currentUserValue) { 
-      //     this.router.navigate(['/']);
-      // }
+    let userData = localStorage.getItem('user');
+    if(userData){
+      this.router.navigate(['/products']);
+    }
   }
 
   ngOnInit() {

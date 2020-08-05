@@ -12,38 +12,40 @@ export class ProductListComponent implements OnInit {
   productTitle:string;
   filters:any;
   loader: boolean = false;
-  @Output() messageEvent = new EventEmitter<boolean>();
 
   constructor(private backendService: BackendService) { }
 
   ngOnInit(): void {
-    this.showLoader();
+    this.loader = true;
     this.backendService.getProductList().subscribe((data: any[])=>{
       this.products = data;
-      this.hideLoader();
+      this.loader = false;
     })
   }
 
 
   searchProducts($event) {
-    this.showLoader();
+    this.loader = true;
     this.productTitle = $event;
     this.backendService.getProductByTitle(this.productTitle).subscribe((data: any[])=>{
       this.products = data;
-      this.hideLoader();
+      this.loader = false;
     })
   }
 
   filterProducts($event) {
     let self = this;
     self.filters = $event;
+    this.loader = true;
     if(self.productTitle){
       self.backendService.getProductByTitle(this.productTitle).subscribe((data: any[])=>{
         self.products = this.filterArrayFunction(self.filters, data)
+        this.loader = false;
       })
     }else{
       self.backendService.getProductList().subscribe((data: any[])=>{
         self.products = this.filterArrayFunction(self.filters, data)
+        this.loader = false;
       })
     }
     
@@ -54,7 +56,7 @@ export class ProductListComponent implements OnInit {
     //filter by colour
     if(filters.colours.length){
       products = products.filter(function (item) {
-        if(filters.colours.includes(item.colour.title)){
+        if(filters.colours.includes(item.colour.title.toLocaleLowerCase())){
           return item;
         }
       });
@@ -62,7 +64,7 @@ export class ProductListComponent implements OnInit {
     //filter by brand
     if(filters.brands.length){
       products = products.filter(function (item) {
-        if(filters.brands.includes(item.brand)){
+        if(filters.brands.includes(item.brand.toLocaleLowerCase())){
           return item;
         }
       });
@@ -101,23 +103,11 @@ export class ProductListComponent implements OnInit {
         }
       });
     }
-
-
     return products;
   }
 
   addToCart(productId:number){
     this.cartItems = this.cartItems + 1;
-  }
-
-  showLoader(){
-    this.loader = true;
-    this.messageEvent.emit(this.loader)
-  }
-
-  hideLoader(){
-    this.loader = false;
-    this.messageEvent.emit(this.loader)
   }
 
 }

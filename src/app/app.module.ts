@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -17,7 +16,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AppComponent,
     LoginComponent,
     ProductListComponent,
-    HomeComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent

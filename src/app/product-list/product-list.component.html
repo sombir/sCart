@@ -1,4 +1,4 @@
-<app-header [totalItems]="cartItems" (messageEvent)="searchProducts($event)"></app-header>
+<app-header [totalItems]="cartItems" [loaderFlag]="loader" (messageEvent)="searchProducts($event)"></app-header>
 <app-sidebar (messageEvent)="filterProducts($event)"></app-sidebar>
 <div id="main">
     <div class="productsContainer">

@@ -1,3 +1,14 @@
+#loading {
+    background: url('/assets/spinner2.gif') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+    display: block;
+    background-color: rgb(146 145 145 / 70%);
+}
 #header{
     border-bottom: 1px solid #ddd;
     width:100%;

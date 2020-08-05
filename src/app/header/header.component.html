@@ -1,10 +1,11 @@
+<div id="loading" *ngIf="loaderFlag"></div>
 <div id="header">
     <div class="logo">
         <p>Logo</p>
     </div>
     <input type="text" class="search" placeholder="Search Products" name="search" (input)="onSearchChange($event.target.value)">
     <div class="user-info">
-        <p><i class="fa fa-user" style="font-size:24px"></i>Welcome Amigo</p>
+        <p><i class="fa fa-user" style="font-size:24px"></i>Welcome {{userName}}</p>
         <p><i class="fa fa-shopping-cart" style="font-size:24px"></i> {{totalItems}} item</p>
     </div>
 </div>
